@@ -43,8 +43,14 @@ module.exports = {
       modulesDirectories: ['node_modules']
     },
     loaders: [
+      //Use <link rel="stylesheet" href="styles.css"> in index.html when extracting css
+      // Extract CSS during build
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },
       //You still need css for files that are not .scss but jus .css
-      { test: /\.css?$/, loader: 'style!css' },
+      //{ test: /\.css?$/, loader: 'style!css' },
       {test: /\.ts$/, loader: 'awesome-typescript', exclude: [/\.(spec|e2e)\.ts$/, /node_modules/]},
       { test: /\.html$/, loader: 'html' },
       { test: /\.(png|gif|jpg)$/, loader: 'url', query: { limit: 8192 } },
