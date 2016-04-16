@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/",
+    "sourceMap": true,
+//    "target": "es5",
+//    "module": "commonjs",
+    "target": "es2015",
+    "module": "es2015",
+    "declaration": false,
+    "noImplicitAny": false,
+    "noResolve": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./node_modules/aurelia-*/dist/aurelia-*.d.ts",
+    "./typings/browser.d.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true
+  }
+}
